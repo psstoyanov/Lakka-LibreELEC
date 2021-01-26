@@ -34,6 +34,13 @@ case "$LINUX" in
     PKG_SOURCE_NAME="linux-$LINUX-$PKG_VERSION.tar.gz"
     PKG_PATCH_DIRS="rpi"
     ;;
+  pinephone-mainline)
+    PKG_VERSION=:"5a93114de564ff6ed2243e4668fe2d79f09f4184" # 5.10.10 Megi
+    PKG_SHA256="593e5afc741ff7f18aa26436d8f1185f18a1ea0fdb7b0582830c9aa69c44c32d"
+    PKG_URL="https://github.com/megous/linux/archive/$PKG_VERSION.tar.gz"
+    PKG_SOURCE_NAME="linux-$LINUX-$PKG_VERSION.tar.gz"
+    PKG_PATCH_DIRS="pinephone"
+    ;;
   odroidxu3-5.4)
     PKG_VERSION="5e12d570f207e48f321029b15026ae7c4ab21217"
     PKG_URL="https://github.com/hardkernel/linux/archive/$PKG_VERSION.tar.gz"
