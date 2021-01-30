@@ -21,6 +21,16 @@ PKG_NEED_UNPACK="$PROJECT_DIR/$PROJECT/bootloader"
 [ -n "$DEVICE" ] && PKG_NEED_UNPACK+=" $PROJECT_DIR/$PROJECT/devices/$DEVICE/bootloader"
 
 case "$PROJECT" in
+  Allwinner)
+    case "$DEVICE" in 
+      PinePhone)
+        PKG_VERSION="7206996ef7f89375dd74b275ced62d85f8bc7f42"
+        PKG_SHA256="33cbab12e4b69f5bb4c0d88d83f3231289c8798096f91447009ad117544a717e"
+        PKG_URL="https://gitlab.com/pine64-org/u-boot/-/archive/$PKG_VERSION/u-boot-$PKG_VERSION.tar.gz"
+        ;;
+      *)
+    esac
+    ;;
   Rockchip)
     case "$DEVICE" in
       OdroidGoAdvance)
