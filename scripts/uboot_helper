@@ -35,6 +35,10 @@ devices = \
         'dtb': 'sun50i-a64-pine64-plus.dtb',
         'config': 'pine64_plus_defconfig'
       },
+      'pinephone': {
+        'dtab': 'sun50i-a64-pinephone.dtb',
+        'config': 'pinephone_defconfig'
+      },
     },
     'H3': {
       'bananapi': {
