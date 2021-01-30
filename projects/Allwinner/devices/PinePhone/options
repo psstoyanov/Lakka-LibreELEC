@@ -1,0 +1,78 @@
+################################################################################
+# setup system defaults
+################################################################################
+
+  # The TARGET_CPU variable controls which processor should be targeted for
+  # generated code.
+    case $TARGET_ARCH in
+      aarch64)
+        TARGET_CPU="cortex-a53"
+        TARGET_CPU_FLAGS="+crc+crypto"
+        TARGET_FEATURES="64bit"
+        TARGET_KERNEL_ARCH="arm64"
+        
+        # Exclude non-building cores
+        LIBRETRO_CORES="${LIBRETRO_CORES// desmume /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// desmume-2015 /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// mame2015 /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// yabause /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// chailove /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// flycast /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// mupen64plus_next /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// tic80 /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// vbam /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// ppsspp /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// scummvm /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// mame2003-plus /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// mame2010 /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// mame2015 /}"
+        LIBRETRO_CORES="${LIBRETRO_CORES// mame2016 /}"
+        ;;
+       
+      arm)
+        TARGET_KERNEL_ARCH="arm64"
+        TARGET_PATCH_ARCH="aarch64"
+        TARGET_FLOAT="hard"
+        TARGET_CPU="cortex-a53"
+        TARGET_CPU_FLAGS="+crc"
+        TARGET_FPU="crypto-neon-fp-armv8"
+        TARGET_FEATURES="32bit"
+        ;;
+    esac
+
+  # OpenGL-ES implementation to use (no / bcm2835-driver / gpu-viv-bin-mx6q)
+    OPENGLES="mesa"
+
+  # Displayserver to use (x11 / no)
+    DISPLAYSERVER="no"
+
+  # Windowmanager to use (ratpoison / fluxbox / none)
+    WINDOWMANAGER="none"
+
+  # Xorg Graphic drivers to use (all / i915,i965,r200,r300,r600,nvidia)
+  # Space separated list is supported,
+  # e.g. GRAPHIC_DRIVERS="i915 i965 r300 r600 radeonsi nvidia"
+    GRAPHIC_DRIVERS="lima"
+
+  # Kernel to use. values can be:
+  # default:  default mainline kernel
+    LINUX="pinephone"
+
+  # Kernel target
+    KERNEL_TARGET="Image"
+
+  # U-Boot firmware package(s) to use
+    UBOOT_FIRMWARE="atf"
+  
+
+
+  # ATF platform
+    ATF_PLATFORM="sun50i_a64"
+
+  # Mali GPU family
+    MALI_FAMILY="400"
+
+    SAMBA_SUPPORT="no"
+    SAMBA_SERVER="no"
+
+    EXTRA_CMDLINE="console=ttyS0,115200 console=tty1"
