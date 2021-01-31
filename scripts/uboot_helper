@@ -35,10 +35,6 @@ devices = \
         'dtb': 'sun50i-a64-pine64-plus.dtb',
         'config': 'pine64_plus_defconfig'
       },
-      'pinephone': {
-        'dtab': 'sun50i-a64-pinephone.dtb',
-        'config': 'pinephone_defconfig'
-      },
     },
     'H3': {
       'bananapi': {
@@ -114,6 +110,24 @@ devices = \
       'pine-h64': {
         'dtb': 'sun50i-h6-pine-h64.dtb',
         'config': 'pine_h64_defconfig'
+      },
+    },
+    'PinePhone': {
+      'pinephone': {
+          'dtb': 'sun50i-a64-pinephone-1.2.dtb',
+          'config': 'pinephone_defconfig'
+      },
+      'pinephone-1.0': {
+          'dtb': 'sun50i-a64-pinephone-1.0.dtb',
+          'config': 'pinephone_defconfig'
+      },
+      'pinephone-1.1': {
+          'dtb': 'sun50i-a64-pinephone-1.1.dtb',
+          'config': 'pinephone_defconfig'
+      },
+      'pinetab': {
+          'dtb': 'sun50i-a64-pinetab.dtb',
+          'config': 'pinetab_defconfig'
       },
     },
   },
