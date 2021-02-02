@@ -114,7 +114,7 @@ configure_target() {
 }
 
 make_target() {
-  ./buildtools/bin/waf build --targets=$PKG_SAMBA_TARGET -j$CONCURRENCY_MAKE_LEVEL
+  ./buildtools/bin/waf build --targets=$PKG_SAMBA_TARGET -j1
 }
 
 makeinstall_target() {
