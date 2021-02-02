@@ -64,15 +64,12 @@
   # U-Boot firmware package(s) to use
     UBOOT_FIRMWARE="atf"
   
-
+    EXTRA_CMDLINE="console=ttyS0,115200 console=tty1"
 
   # ATF platform
     ATF_PLATFORM="sun50i_a64"
 
   # Mali GPU family
     MALI_FAMILY="400"
-
-    SAMBA_SUPPORT="no"
-    SAMBA_SERVER="no"
 
     EXTRA_CMDLINE="console=ttyS0,115200 console=tty1"
