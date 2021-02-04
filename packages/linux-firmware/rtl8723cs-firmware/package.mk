@@ -2,12 +2,16 @@
 # Copyright (C) 2018-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="rtl8723cs-firmware"
-PKG_VERSION="2371a976e3c4de6bdfd505b45b1b3682943e1302"
-PKG_SHA256="c5aeb0325f74ac24c0ef5a720fd2c391ef664c66561e9397edd7c624c08b7674"
-PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/Icenowy/rtl8723cs"
-PKG_URL="https://github.com/Icenowy/rtl8723cs/archive/$PKG_VERSION.tar.gz"
-PKG_DEPENDS_TARGET="toolchain"
+PKG_VERSION="39da5959deff5041160fa85e62dddb89066471b3"
+PKG_LICENSE="custom"
+PKG_SITE="https://github.com/anarsoul/rtl8723bt-firmware"
+PKG_URL="https://github.com/anarsoul/rtl8723bt-firmware/archive/$PKG_VERSION.tar.gz"
+
 PKG_LONGDESC="Linux driver for Realtek RTL8723CS chip"
+PKG_TOOLCHAIN="toolchain"
 
 
+makeinstall_target(){
+	# Doesn't move the 
+	#cp -v $(get_build_dir) $INSTALL/$(get_full_firmware_dir)/rtl_bt
+}
