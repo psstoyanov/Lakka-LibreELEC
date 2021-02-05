@@ -56,10 +56,17 @@
 
   # Kernel to use. values can be:
   # default:  default mainline kernel
-    LINUX="pinephone"
+    LINUX="pinephone-pmOS"
 
   # Kernel target
     KERNEL_TARGET="Image"
+
+  # additional Firmware to use (dvb-firmware, misc-firmware, wlan-firmware)
+  # Space separated list is supported,
+  # e.g. FIRMWARE="dvb-firmware misc-firmware wlan-firmware"
+    
+  #  FIRMWARE="rtl8723cs-firmware"
+  #   FIRMWARE="firmware-realtek"  
 
   # U-Boot firmware package(s) to use
     UBOOT_FIRMWARE="atf"

@@ -40,6 +40,12 @@ case "$LINUX" in
     PKG_URL="https://github.com/psstoyanov/linux/archive/$PKG_VERSION.tar.gz"
     PKG_SOURCE_NAME="linux-$PKG_VERSION.tar.gz"
     ;;
+  pinephone-pmOS)
+    PKG_VERSION="34395726b53257d8eec3ca2ba6766fe1d6b6e3b2"
+    PKG_SHA256="3b022f961a51f2ee73598f6d56c2f3f50ed91df422cca02a701b20505f9952e2"
+    PKG_URL="https://github.com/megous/linux/archive/$PKG_VERSION.tar.gz"
+    PKG_SOURCE_NAME="linux-$PKG_VERSION.tar.gz"
+    ;;
   odroidxu3-5.4)
     PKG_VERSION="5e12d570f207e48f321029b15026ae7c4ab21217"
     PKG_URL="https://github.com/hardkernel/linux/archive/$PKG_VERSION.tar.gz"
