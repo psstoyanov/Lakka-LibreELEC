@@ -18,7 +18,6 @@
         LIBRETRO_CORES="${LIBRETRO_CORES// yabause /}"
         LIBRETRO_CORES="${LIBRETRO_CORES// chailove /}"
         LIBRETRO_CORES="${LIBRETRO_CORES// flycast /}"
-        LIBRETRO_CORES="${LIBRETRO_CORES// mupen64plus_next /}"
         LIBRETRO_CORES="${LIBRETRO_CORES// tic80 /}"
         LIBRETRO_CORES="${LIBRETRO_CORES// vbam /}"
         LIBRETRO_CORES="${LIBRETRO_CORES// ppsspp /}"
@@ -44,7 +43,7 @@
     OPENGLES="mesa"
 
   # Displayserver to use (x11 / no)
-    DISPLAYSERVER="no"
+    DISPLAYSERVER="weston"
 
   # Windowmanager to use (ratpoison / fluxbox / none)
     WINDOWMANAGER="none"
