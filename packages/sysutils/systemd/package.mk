@@ -3,7 +3,7 @@
 # Copyright (C) 2018-present Team LibreELEC (https://libreelec.tv)
 
 PKG_NAME="systemd"
-PKG_VERSION="242"
+PKG_VERSION="247"
 PKG_SHA256="ec22be9a5dd94c9640e6348ed8391d1499af8ca2c2f01109198a414cff6c6cba"
 PKG_LICENSE="LGPL2.1+"
 PKG_SITE="http://www.freedesktop.org/wiki/Software/systemd"
@@ -100,7 +100,6 @@ pre_configure_target() {
 post_makeinstall_target() {
   # remove unneeded stuff
   safe_remove $INSTALL/etc/init.d
-  safe_remove $INSTALL/etc/pam.d
   safe_remove $INSTALL/etc/systemd/system
   safe_remove $INSTALL/etc/xdg
   safe_remove $INSTALL/etc/X11
@@ -215,6 +214,9 @@ post_makeinstall_target() {
   cp $PKG_DIR/scripts/userconfig-setup $INSTALL/usr/bin
   cp $PKG_DIR/scripts/usercache-setup $INSTALL/usr/bin
 
+# use systemd to set cpufreq governor and tunables
+  find_file_path scripts/cpufreq && cp -PRv $FOUND_PATH $INSTALL/usr/bin
+
   mkdir -p $INSTALL/usr/sbin
   cp $PKG_DIR/scripts/kernel-overlays-setup $INSTALL/usr/sbin
   cp $PKG_DIR/scripts/network-base-setup $INSTALL/usr/sbin
@@ -284,6 +286,7 @@ post_install() {
   enable_service usercache.service
   enable_service kernel-overlays.service
   enable_service hwdb.service
+  enable_service cpufreq.service
   enable_service network-base.service
   enable_service systemd-timesyncd.service
   enable_service systemd-timesyncd-setup.service
