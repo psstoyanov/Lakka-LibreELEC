@@ -19,7 +19,7 @@ else
 fi
 
 # Make sure we have a value for STRIP
-setup_toolchain target
+setup_toolchain generic target
 
 ADDON_DIRECTORY="${ADDON_BUILD}/${PKG_ADDON_ID}"
 
